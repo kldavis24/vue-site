@@ -25,11 +25,11 @@
                                 <div
                                     v-if="hover"
                                     @click="navigateToSite"
-                                    id="https://interiordefine.com"
+                                    :id="id_url"
                                     class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                     style="height: 100%;"
                                 >
-                                    <v-card-text>
+                                    <v-card-text :id="id_url">
                                         magento<br>laravel
                                     </v-card-text>
                                 </div>
@@ -63,11 +63,11 @@
                                 <div
                                     v-if="hover"
                                     @click="navigateToSite"
-                                    id="https://gruntstyle.com"
+                                    :id="gs_url"
                                     class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                     style="height: 100%;"
                                 >
-                                    <v-card-text>
+                                    <v-card-text :id="gs_url">
                                         shopify<br>laravel<br>common js
                                     </v-card-text>
                                 </div>
@@ -90,40 +90,40 @@
         </v-container>
         <v-container class="fill-height" fluid>
             <v-col cols="6">
-                <v-hover v-slot:default="{ hover }">
-                    <v-card>
+                <v-card>
+                    <v-hover v-slot:default="{ hover }">
                         <v-img
                             :src="mb_image"
                             height="250"
                             contain
+                            @click="navigateToSite"
                             class="grey darken-4"
                         >
                             <v-expand-transition>
                                 <div
                                     v-if="hover"
-                                    @click="navigateToSite"
-                                    id="http://www.mericabourbon.com/"
+                                    :id="mb_url"
                                     class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                     style="height: 100%;"
                                 >
-                                    <v-card-text>
+                                    <v-card-text :id="mb_url">
                                         wordpress
                                     </v-card-text>
                                 </div>
                             </v-expand-transition>
                         </v-img>
-                        <v-expansion-panels>
-                            <v-expansion-panel>
-                                <v-expansion-panel-header class="title">merica bourbon</v-expansion-panel-header>
-                                <v-expansion-panel-content>
-                                    a simple brand information page that utilizes the google maps API for a store locator,
-                                    an instagram plugin for users to see their posts on the site by adding a custom tag
-                                    to them, and a custom 'press' page to post articles written about the brand.
-                                </v-expansion-panel-content>
-                            </v-expansion-panel>
-                        </v-expansion-panels>
-                    </v-card>
-                </v-hover>
+                    </v-hover>
+                    <v-expansion-panels>
+                        <v-expansion-panel>
+                            <v-expansion-panel-header class="title">merica bourbon</v-expansion-panel-header>
+                            <v-expansion-panel-content>
+                                a simple brand information page that utilizes the google maps API for a store locator,
+                                an instagram plugin for users to see their posts on the site by adding a custom tag
+                                to them, and a custom 'press' page to post articles written about the brand.
+                            </v-expansion-panel-content>
+                        </v-expansion-panel>
+                    </v-expansion-panels>
+                </v-card>
             </v-col>
             <v-col cols="6">
                 <v-hover v-slot:default="{ hover }">
@@ -138,11 +138,11 @@
                                 <div
                                     v-if="hover"
                                     @click="navigateToSite"
-                                    id="https://agweb.com"
+                                    :id="ag_url"
                                     class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                     style="height: 100%;"
                                 >
-                                    <v-card-text>
+                                    <v-card-text :id="ag_url">
                                         drupal<br>express js
                                     </v-card-text>
                                 </div>
@@ -176,11 +176,11 @@
                                 <div
                                     v-if="hover"
                                     @click="navigateToSite"
-                                    id="https://harryhelmetvirginia.com"
+                                    :id="hh_url"
                                     class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                     style="height: 100%;"
                                 >
-                                    <v-card-text>
+                                    <v-card-text :id="hh_url">
                                         wordpress
                                     </v-card-text>
                                 </div>
@@ -214,11 +214,16 @@
             id_image: `http://${window.location.host}/interior-define-monitor.png`,
             hh_image: `http://${window.location.host}/harry-helmet-monitor.png`,
             ag_image: `http://${window.location.host}/agweb-monitor.png`,
+            gs_url: 'https://gruntstyle.com',
+            mb_url: 'http://www.mericabourbon.com/',
+            id_url: 'https://interiordefine.com',
+            hh_url: 'https://harryhelmetvirginia.com/',
+            ag_url: 'https://agweb.com'
         }),
 
         methods: {
             navigateToSite(event) {
-                let url = event.target.parentElement.id
+                let url = event.target.id
                 window.open(url, '_blank')
             }
         }
