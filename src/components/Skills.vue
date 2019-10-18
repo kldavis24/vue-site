@@ -8,7 +8,7 @@
                 <v-row align="center" justify="space-around" class="mb-10">
                     <div id="php-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="php" class="xxl cool-blue">mdi-language-php</v-icon>
-                        <blockquote id="php-text" class="text--black overline font-weight-bold text-center title">php</blockquote>
+                        <blockquote id="php-text" class="text--black overline font-weight-bold text-center title">duh</blockquote>
                     </div>
                     <div id="vue-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="vue" class="xxl cool-blue">mdi-vuejs</v-icon>
