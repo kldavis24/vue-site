@@ -1,9 +1,11 @@
 <template>
     <div>
-        <v-parallax dark height="500" src="frontiers-background-full.jpg">
+        <v-parallax dark height="700" src="frontiers-background-full.jpg">
             <v-row v-show="show" :transition="fade" no-gutters justify="center" id="quote" align="center">
-                <h1 class="display-2 font-weight-thin mb-4">"{{ selected.text }}"</h1>
-                <h4 class="subheading"> - {{ selected.author }}</h4>
+                <v-col class="text-center" cls="12">
+                    <h1 class="display-2 font-weight-thin mb-4">"{{ selected.text }}"</h1>
+                    <h4 class="subheading"> - {{ selected.author }}</h4>
+                </v-col>
             </v-row>
         </v-parallax>
     </div>
@@ -21,7 +23,6 @@
         data: () => ({
             quotes: [
                 { text: 'life is too short to run proprietary software.', author: 'bdale garbee' },
-                { text: 'if the code and the comments do not match, possibly both are incorrect.', author: 'norm schryer' },
                 { text: 'simplicity, carried to the extreme, becomes elegance.', author: 'jon franklin' }
             ],
             selected: [],
@@ -31,7 +32,7 @@
 
         methods: {
             selectQuote() {
-                let selector = Math.floor(Math.random() * 3)
+                let selector = Math.floor(Math.random() * 2)
                 let quotes = this.quotes
 
                 this.selected = quotes[selector]

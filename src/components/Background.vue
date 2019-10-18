@@ -8,9 +8,9 @@
         <div class="bg-grey no-shadow">
             <v-window class="no-shadow" v-model="onboarding">
                 <v-window-item v-for="n in career" :key="`card-${n.key}`">
-                    <v-row class="fill-height" tag="v-card-text">
-                        <v-container>
-                            <blockquote class="headline mt-3 blockquote pa-0">{{ n.title }}</blockquote>
+                    <v-row class="fill-height pt-0" tag="v-card-text">
+                        <v-container class="pt-0">
+                            <blockquote class="headline pt-0 blockquote pa-0">{{ n.title }}</blockquote>
                             <blockquote class="subheading mt-3 blockquote pa-0">{{ n.content }}</blockquote>
                             <blockquote v-if="n.content2" class="subheading mt-3 blockquote pa-0">{{ n.content2 }}</blockquote>
                         </v-container>
@@ -94,12 +94,12 @@
                         'creating custom modules for editorial requests, third-party application integrations with the sites,\n' +
                         'and continuously working on the master drupal site, which pushes content out to each necessary location.',
                     content2: 'we have also created an API written in laravel, which uses the laravel nova admin panel. this API is\n' +
-                        'to serve as the backbone of all our application integration, with an application front-end written\n' +
+                        'to serve as the backbone of all our application integration, with a front-end written\n' +
                         'exclusively in vue. passport is handling all of the endpoints that require oauth2 authentication,\n' +
                         'and horizon is used for a quick and easy job queue management. the application currently sends automated\n' +
                         'emails and SMS by template via the JSON data submitted to the endpoints. vue components are incorporated\n' +
                         'as nova resources to send a single email/SMS to any customer who may have been missed in the JSON. the API\n' +
-                        'documentation also provides thorough details of each endpoint, what the necessary headers are, how the\n' +
+                        'documentation also provides thorough details of each endpoint, the necessary headers, how the\n' +
                         'JSON data needs to be formatted, and code examples for command line, php, and javascript.'
                 }
             ]

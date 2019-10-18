@@ -12,13 +12,13 @@
             </v-row>
         </v-container>
 
-        <div v-if="!mobile">
+        <div class="hidden-md-and-down">
             <v-container class="fill-height" fluid>
                 <v-col cols="6">
                     <v-card>
                         <v-hover v-slot:default="{ hover }">
                             <v-img
-                                :src="id_image"
+                                :src="images[0].id"
                                 height="250"
                                 contain
                                 class="grey darken-4"
@@ -27,11 +27,11 @@
                                     <div
                                         v-if="hover"
                                         @click="navigateToSite"
-                                        :id="id_url"
+                                        :id="urls[0].id"
                                         class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                         style="height: 100%;"
                                     >
-                                        <v-card-text :id="id_url">
+                                        <v-card-text :id="urls[0].id">
                                             magento<br>laravel
                                         </v-card-text>
                                     </div>
@@ -56,7 +56,7 @@
                     <v-card>
                         <v-hover v-slot:default="{ hover }">
                             <v-img
-                                :src="gs_image"
+                                :src="images[0].gs"
                                 height="250"
                                 contain
                                 class="grey darken-4"
@@ -65,11 +65,11 @@
                                     <div
                                         v-if="hover"
                                         @click="navigateToSite"
-                                        :id="gs_url"
+                                        :id="urls[0].gs"
                                         class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                         style="height: 100%;"
                                     >
-                                        <v-card-text :id="gs_url">
+                                        <v-card-text :id="urls[0].gs">
                                             shopify<br>laravel<br>common js
                                         </v-card-text>
                                     </div>
@@ -91,11 +91,11 @@
                 </v-col>
             </v-container>
             <v-container class="fill-height" fluid>
-                <v-col :cols="columns">
+                <v-col cols="6">
                     <v-card>
                         <v-hover v-slot:default="{ hover }">
                             <v-img
-                                :src="mb_image"
+                                :src="images[0].mb"
                                 height="250"
                                 contain
                                 @click="navigateToSite"
@@ -104,11 +104,11 @@
                                 <v-expand-transition>
                                     <div
                                         v-if="hover"
-                                        :id="mb_url"
+                                        :id="urls[0].mb"
                                         class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                         style="height: 100%;"
                                     >
-                                        <v-card-text :id="mb_url">
+                                        <v-card-text :id="urls[0].mb">
                                             wordpress
                                         </v-card-text>
                                     </div>
@@ -127,11 +127,11 @@
                         </v-expansion-panels>
                     </v-card>
                 </v-col>
-                <v-col :cols="columns">
+                <v-col cols="6">
                     <v-card>
                         <v-hover v-slot:default="{ hover }">
                             <v-img
-                                :src="ag_image"
+                                :src="images[0].ag"
                                 height="250"
                                 contain
                                 class="grey darken-4"
@@ -140,11 +140,11 @@
                                     <div
                                         v-if="hover"
                                         @click="navigateToSite"
-                                        :id="ag_url"
+                                        :id="urls[0].ag"
                                         class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                         style="height: 100%;"
                                     >
-                                        <v-card-text :id="ag_url">
+                                        <v-card-text :id="urls[0].ag">
                                             drupal<br>express js
                                         </v-card-text>
                                     </div>
@@ -169,7 +169,7 @@
                     <v-card>
                         <v-hover v-slot:default="{ hover }">
                             <v-img
-                                :src="hh_image"
+                                :src="images[0].hh"
                                 height="250"
                                 contain
                                 class="grey darken-4"
@@ -178,11 +178,11 @@
                                     <div
                                         v-if="hover"
                                         @click="navigateToSite"
-                                        :id="hh_url"
+                                        :id="urls[0].hh"
                                         class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                         style="height: 100%;"
                                     >
-                                        <v-card-text :id="hh_url">
+                                        <v-card-text :id="urls[0].hh">
                                             wordpress
                                         </v-card-text>
                                     </div>
@@ -205,7 +205,7 @@
             </v-container>
         </div>
 
-        <MobileWork v-if="mobile" />
+        <MobileWork class="hidden-md-and-up" :images="images" :urls="urls" />
     </div>
 </template>
 
@@ -220,43 +220,29 @@
 
         mounted() {},
 
-        computed: {
-            columns() {
-                switch (this.$vuetify.breakpoint.name) {
-                    case 'xs':
-                        this.mobile = true
-                        return '12'
-                    case 'sm':
-                        this.mobile = true
-                        return '12'
-                    case 'md': return '12'
-                    case 'lg': return '6'
-                    case 'xl': return '6'
-                }
-            },
-
-            breakpoint() {
-                return this.$vuetify.breakpoint.name
-            }
-        },
+        computed: {},
 
         data: () => ({
-            gs_image: `http://${window.location.host}/gs-monitor.png`,
-            mb_image: `http://${window.location.host}/merica-bourbon-monitor.png`,
-            id_image: `http://${window.location.host}/interior-define-monitor.png`,
-            hh_image: `http://${window.location.host}/harry-helmet-monitor.png`,
-            ag_image: `http://${window.location.host}/agweb-monitor.png`,
-            gs_url: 'https://gruntstyle.com',
-            mb_url: 'http://www.mericabourbon.com/',
-            id_url: 'https://interiordefine.com',
-            hh_url: 'https://harryhelmetvirginia.com/',
-            ag_url: 'https://agweb.com',
-            mobile: false
+            images: [{
+                gs: `http://${window.location.host}/gs-monitor.png`,
+                mb: `http://${window.location.host}/merica-bourbon-monitor.png`,
+                id: `http://${window.location.host}/interior-define-monitor.png`,
+                ag: `http://${window.location.host}/agweb-monitor.png`,
+                hh: `http://${window.location.host}/harry-helmet-monitor.png`,
+            }],
+            urls: [{
+                gs: 'https://gruntstyle.com',
+                mb: 'http://www.mericabourbon.com',
+                id: 'https://interiordefine.com',
+                ag: 'https://agweb.com',
+                hh: 'https://harryhelmetvirginia.com'
+            }],
         }),
 
         methods: {
             navigateToSite(event) {
                 let url = event.target.id
+
                 window.open(url, '_blank')
             }
         }

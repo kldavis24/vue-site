@@ -150,6 +150,13 @@
         padding-top: .5rem;
         padding-bottom: .5rem;
     }
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .pt-0 {
+        padding-top: 0;
+    }
     /* END DISPLAY */
 
     /* BORDERS */
