@@ -57,7 +57,7 @@
                     self.commandLine = false;
                     self.commandEnd = true;
                     this.$cookies.set('commandSeen', true, 60 * 60)
-                }, 12000);
+                }, 14000);
             },
 
             checkForCookie() {
@@ -181,4 +181,12 @@
         font-weight: 800;
     }
     /* END FONTS */
+
+    /* MEDIA QUERIES */
+    @media screen and (max-width: 500px) {
+        .terminal {
+            margin: 0;
+            top: 25%;
+        }
+    }
 </style>

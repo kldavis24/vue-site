@@ -87,12 +87,12 @@
                             :src="images[0].mb"
                             height="250"
                             contain
-                            @click="navigateToSite"
                             class="grey darken-4"
                         >
                             <v-expand-transition>
                                 <div
                                     v-if="hover"
+                                    @click="navigateToSite"
                                     :id="urls[0].mb"
                                     class="d-flex transition-fast-in-fast-out overlay-blue darken-2 v-card--reveal display-3 white--text"
                                     style="height: 100%;"
@@ -109,8 +109,8 @@
                             <v-expansion-panel-header class="title">merica bourbon</v-expansion-panel-header>
                             <v-expansion-panel-content>
                                 a simple brand information page that utilizes the google maps API for a store locator,
-                                an instagram plugin for users to see their posts on the site by adding a custom tag
-                                to them, and a custom 'press' page to post articles written about the brand.
+                                an instagram plugin for users to see their posts on the site by adding a custom tag to
+                                them, and a custom 'press' page to post articles written about the brand.
                             </v-expansion-panel-content>
                         </v-expansion-panel>
                     </v-expansion-panels>
@@ -210,9 +210,7 @@
             'urls'
         ],
 
-        data: () => ({
-            //mobile: false
-        }),
+        data: () => ({}),
 
         methods: {
             navigateToSite(event) {

@@ -8,6 +8,7 @@ import VueLazyload from 'vue-lazyload'
 import Vuelidate from 'vuelidate'
 import VueTyperPlugin from 'vue-typer'
 import VueCookies from 'vue-cookies'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 Vue.config.productionTip = false
 Vue.use(VueScrollTo)

@@ -33,7 +33,7 @@
                         <blockquote id="js-text" class="text--black overline font-weight-bold text-center title">common js</blockquote>
                     </div>
                 </v-row>
-                <v-row align="center" justify="space-around">
+                <v-row align="center" justify="space-around" class="mb-10">
                     <div id="git-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="git" class="xxl cool-blue">mdi-git</v-icon>
                         <blockquote id="git-text" class="text--black overline font-weight-bold text-center title">git</blockquote>
@@ -45,6 +45,20 @@
                     <div id="html-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="html" class="xxl cool-blue text-center">mdi-language-html5</v-icon>
                         <blockquote id="html-text" class="text--black overline font-weight-bold text-center title">html</blockquote>
+                    </div>
+                </v-row>
+                <v-row align="center" justify="space-around">
+                    <div id="sql-holder">
+                        <v-icon @mouseover="swapText" @mouseout="swapText" id="sql" class="xxl cool-blue">mdi-database</v-icon>
+                        <blockquote id="sql-text" class="text--black overline font-weight-bold text-center title">sql</blockquote>
+                    </div>
+                    <div id="wp-holder">
+                        <v-icon @mouseover="swapText" @mouseout="swapText" id="wp" class="xxl cool-blue text-center">fab fa-wordpress-simple</v-icon>
+                        <blockquote id="wp-text" class="text--black overline font-weight-bold text-center title">wordpress</blockquote>
+                    </div>
+                    <div id="css-holder">
+                        <v-icon @mouseover="swapText" @mouseout="swapText" id="css" class="xxl cool-blue text-center">mdi-language-css3</v-icon>
+                        <blockquote id="css-text" class="text--black overline font-weight-bold text-center title">css</blockquote>
                     </div>
                 </v-row>
             </v-container>
@@ -59,6 +73,10 @@
         data: () => ({
             isactive: false
         }),
+
+        icons: {
+            iconfont: 'fa',
+        },
 
         methods: {
             swapText(event) {

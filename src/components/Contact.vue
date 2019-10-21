@@ -5,7 +5,7 @@
                 <h1 class="display-2 font-weight-thin mb-4 underline">get in touch</h1>
             </v-row>
             <v-row justify="center" align="center">
-                <div v-if="seen" class="w-one-quarter mb-6 mt-6" role="alert">
+                <div v-if="seen" id="alert-box" class="w-one-quarter mb-6 mt-6" role="alert">
                     <div v-bind:class="['text-white font-bold rounded-t px-4 py-2', alert.header]">
                         {{ alert.title }}
                     </div>
@@ -183,5 +183,10 @@
         background: #000 !important;
         color: #39B1FF !important;
         border: 1px solid #39B1FF !important;
+    }
+    @media screen and (max-width: 500px) {
+        #alert-box {
+            width: 75%;
+        }
     }
 </style>
