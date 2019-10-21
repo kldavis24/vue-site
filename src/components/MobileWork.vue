@@ -235,4 +235,14 @@
     .v-image:hover {
         cursor: pointer;
     }
+    @media screen and (max-width: 500px) {
+        .v-card__text {
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px #000;
+            line-height: 35px;
+        }
+    }
 </style>
