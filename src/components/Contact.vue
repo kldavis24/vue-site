@@ -84,17 +84,17 @@
             ],
             user_name: '',
             nameRules: [
-                v => !!v || 'Name is required',
-                v => v.length <= 30 || 'Name must be less than 30 characters',
+                v => !!v || 'name is required',
+                v => v.length <= 30 || 'name must be less than 30 characters',
             ],
             user_email: '',
             emailRules: [
-                v => !!v || 'E-mail is required',
-                v => /.+@.+/.test(v) || 'E-mail must be valid',
+                v => !!v || 'email is required',
+                v => /.+@.+/.test(v) || 'email must be valid',
             ],
             message: '',
             messageRules: [
-                v => !!v || 'Message is required',
+                v => !!v || 'message is required',
             ]
         }),
 

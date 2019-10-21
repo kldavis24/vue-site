@@ -56,7 +56,7 @@
                 setTimeout(function() {
                     self.commandLine = false;
                     self.commandEnd = true;
-                    this.$cookies.set('commandSeen', true, 60 * 60)
+                    this.$cookies.set('commandSeen', true, 60 * 60 * .5)
                 }, 14000);
             },
 
