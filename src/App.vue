@@ -1,28 +1,196 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <v-app>
+        <div v-if="commandLine">
+            <CommandLine />
+        </div>
+        <transition name="fade">
+            <div v-if="commandEnd">
+                <Navigation />
+                <Hero />
+                <Background />
+                <Skills />
+                <Work />
+                <Contact />
+            </div>
+        </transition>
+    </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+    name: 'app',
+
+    mounted() {
+        this.checkForCookie()
+    },
+
+    components: {
+        Work: () => import('./components/Work'),
+        Hero: () => import('./components/Hero'),
+        Skills: () => import('./components/Skills'),
+        Contact: () => import('./components/Contact'),
+        Navigation: () => import('./components/Navigation'),
+        Background: () => import('./components/Background'),
+        CommandLine: () => import('./components/CommandLine'),
+    },
+
+    data: () => ({
+        commandLine: true,
+        commandEnd: false
+    }),
+
+    methods: {
+        transitionTiming() {
+            let self = this;
+
+            setTimeout(function() {
+                self.commandLine = false;
+                self.commandEnd = true;
+                this.$cookies.set('commandSeen', true, 60 * 60 * .5)
+            }, 14000);
+        },
+
+        checkForCookie() {
+            let value = this.$cookies.get('commandSeen')
+
+            if (value === 'true') {
+                this.commandLine = false
+                this.commandEnd = true
+            } else {
+                this.transitionTiming()
+            }
+        }
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    /*#app {*/
+    /*    font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+    /*    -webkit-font-smoothing: antialiased;*/
+    /*    -moz-osx-font-smoothing: grayscale;*/
+    /*    text-align: center;*/
+    /*    color: #2c3e50;*/
+    /*    margin-top: 60px;*/
+    /*}*/
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
+    /* WIDTHS */
+    .w-half {
+        width: 50%;
+    }
+    .w-one-third {
+        width: 33.333%;
+    }
+    .w-one-quarter {
+        width: 25%;
+    }
+    /* END WIDTHS */
+
+    /* COLORS */
+    h1 {
+        color: #fff;
+    }
+    .cool-blue {
+        color: #39B1FF !important;
+    }
+    .bg-red-500 {
+        background-color: #f56565;
+    }
+    .text-red-500 {
+        color: #f56565;
+    }
+    .bg-red-100 {
+        background-color: #fff5f5;
+    }
+    .border-red-400 {
+        border: 1px solid #fc8181;
+    }
+    .bg-green-500 {
+        background-color: #48bb78;
+    }
+    .text-green-500 {
+        color: #48bb78;
+    }
+    .bg-green-100 {
+        background-color: #f0fff4;
+    }
+    .border-green-400 {
+        border: 1px solid #68d391;
+    }
+    .bg-grey {
+        background-color: #7a7a7a;
+    }
+    .bg-black {
+        background-color: #000;
+    }
+    .underline {
+        border-bottom: 1px solid #39B1FF;
+    }
+    .text-white {
+        color: #fff;
+    }
+    /* END COLORS */
+
+    /* DISPLAY */
+    .pb-4 {
+        padding-bottom: 4rem;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .inline {
+        display: inline-block;
+    }
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .py-2 {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .pt-0 {
+        padding-top: 0;
+    }
+    /* END DISPLAY */
+
+    /* BORDERS */
+    .rounded-t {
+        border-top-right-radius: .25rem;
+        border-top-left-radius: .25rem;
+    }
+    .rounded-b {
+        border-bottom-right-radius: .25rem;
+        border-bottom-left-radius: .25rem;
+    }
+    .border-t-0 {
+        border-top-width: 0;
+    }
+    /* END BORDERS */
+
+    /* FONTS */
+    .xxl {
+        font-size: 70px !important;
+    }
+    .font-bold {
+        font-weight: 800;
+    }
+    /* END FONTS */
+
+    /* MEDIA QUERIES */
+    @media screen and (max-width: 500px) {
+        .terminal {
+            margin: 0;
+            top: 25%;
+        }
+    }
 </style>
