@@ -1,9 +1,9 @@
 <template>
     <v-app>
-        <v-content transition="slide-x-transition">
-            <div v-if="commandLine">
-                <CommandLine />
-            </div>
+        <div v-if="commandLine">
+            <CommandLine />
+        </div>
+        <transition name="fade">
             <div v-if="commandEnd">
                 <Navigation />
                 <Hero />
@@ -12,7 +12,7 @@
                 <Work />
                 <Contact />
             </div>
-        </v-content>
+        </transition>
     </v-app>
 </template>
 
@@ -33,21 +33,19 @@
         },
 
         components: {
+            Work,
             Hero,
             Skills,
-            Navigation,
-            Work,
             Contact,
+            Navigation,
             Background,
             CommandLine
         },
 
-        data() {
-            return {
-                commandLine: true,
-                commandEnd: false
-            };
-        },
+        data: () => ({
+            commandLine: true,
+            commandEnd: false
+        }),
 
         methods: {
             transitionTiming() {
@@ -75,6 +73,12 @@
 </script>
 
 <style>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
     /* WIDTHS */
     .w-half {
         width: 50%;

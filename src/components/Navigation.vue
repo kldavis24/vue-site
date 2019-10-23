@@ -2,7 +2,7 @@
     <div>
         <headroom tolerance="5" class="pinned">
             <v-toolbar class="darkbar">
-                <v-toolbar-title>
+                <v-toolbar-title v-scroll-to="'#hero'">
                     {{ open }} <span class="cool-blue">{{ title }}</span> {{ close }}
                 </v-toolbar-title>
 
@@ -22,23 +22,15 @@
                         ></v-app-bar-nav-icon>
                     </template>
 
-                    <v-list>
+                    <v-list v-for="link in links" :key="link.id">
                         <v-list-item>
-                            <v-list-item-title v-scroll-to="'#skills'">skills</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-title v-scroll-to="'#work'">work</v-list-item-title>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-title v-scroll-to="'#contact'">contact</v-list-item-title>
+                            <v-list-item-title v-scroll-to="link.id">{{ link.name }}</v-list-item-title>
                         </v-list-item>
                     </v-list>
                 </v-menu>
 
-                <v-toolbar-items class="hidden-md-and-down">
-                    <v-btn text v-scroll-to="'#skills'"><span class="darkbar">skills</span></v-btn>
-                    <v-btn text v-scroll-to="'#work'"><span class="darkbar">work</span></v-btn>
-                    <v-btn text v-scroll-to="'#contact'"><span class="darkbar">contact</span></v-btn>
+                <v-toolbar-items class="hidden-md-and-down" v-for="link in links" :key="link.id">
+                    <v-btn text v-scroll-to="link.id"><span class="darkbar">{{ link.name }}</span></v-btn>
                 </v-toolbar-items>
             </v-toolbar>
         </headroom>
@@ -58,7 +50,12 @@
         data: () => ({
             title: 'kevin_davis',
             open: '{{',
-            close: '}}'
+            close: '}}',
+            links : [
+                { id: '#skills', name: 'skills' },
+                { id: '#work', name: 'work' },
+                { id: '#contact', name: 'contact' }
+            ]
         })
     }
 </script>
@@ -74,5 +71,8 @@
     .theme--light.v-list {
         background: #000;
         color: #39B1FF;
+    }
+    .v-toolbar__title:hover {
+        cursor: pointer;
     }
 </style>
