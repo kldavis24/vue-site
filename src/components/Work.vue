@@ -224,11 +224,11 @@
 
         data: () => ({
             images: [{
-                gs: `http://${window.location.host}/gs-monitor.png`,
-                mb: `http://${window.location.host}/merica-bourbon-monitor.png`,
-                id: `http://${window.location.host}/interior-define-monitor.png`,
-                ag: `http://${window.location.host}/agweb-monitor.png`,
-                hh: `http://${window.location.host}/harry-helmet-monitor.png`,
+                gs: `https://${window.location.host}/gs-monitor.png`,
+                mb: `https://${window.location.host}/merica-bourbon-monitor.png`,
+                id: `https://${window.location.host}/interior-define-monitor.png`,
+                ag: `https://${window.location.host}/agweb-monitor.png`,
+                hh: `https://${window.location.host}/harry-helmet-monitor.png`,
             }],
             urls: [{
                 gs: 'https://gruntstyle.com',
