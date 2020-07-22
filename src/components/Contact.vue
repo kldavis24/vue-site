@@ -59,10 +59,10 @@
                 </v-container>
             </v-form>
         </v-container>
-        <v-container>
+        <v-container fluid>
             <v-row justify="center" align="center">
-                <v-icon @click="navigateToPage" id="https://github.com/kldavis24" class="xxl cool-blue">mdi-github-circle</v-icon>
-                <v-icon @click="navigateToPage" id="https://www.linkedin.com/in/kevin-davis-6345a710a/" class="xxl cool-blue">mdi-linkedin-box</v-icon>
+                <v-icon @click="navigateToPage" id="https://github.com/kldavis24" class="xxl cool-blue text-center">mdi-github</v-icon>
+                <v-icon @click="navigateToPage" id="https://www.linkedin.com/in/kevin-davis-6345a710a/" class="xxl cool-blue text-center">mdi-linkedin</v-icon>
             </v-row>
         </v-container>
     </div>
@@ -71,6 +71,10 @@
 <script>
     export default {
         mounted() {},
+
+        icons: {
+            iconfont: 'fa',
+        },
 
         data: () => ({
             valid: false,
