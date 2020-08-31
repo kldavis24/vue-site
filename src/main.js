@@ -3,6 +3,8 @@ import App from './App.vue'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import '@babel/polyfill'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import VueScrollTo from 'vue-scrollto'
 import VueLazyload from 'vue-lazyload'
 import Vuelidate from 'vuelidate'
@@ -21,6 +23,9 @@ Vue.use(VueTyperPlugin)
 Vue.use(VueCookies)
 
 new Vue({
+    created () {
+        AOS.init()
+    },
     store,
     vuetify,
     Vuelidate,

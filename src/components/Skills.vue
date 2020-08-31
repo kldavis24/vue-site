@@ -1,65 +1,63 @@
 <template>
     <div id="skills" class="black">
-        <v-container class="pb-16" fluid>
+        <v-container fluid>
             <v-row no-gutters>
                 <h1 class="display-2 font-weight-thin underline">things i'm good at</h1>
             </v-row>
             <v-container fluid class="py-12">
-                <v-row align="center" justify="space-around" class="mb-10">
-                    <div id="php-holder">
+                <v-row data-aos="fade-up-left" data-aos-duration="1000" align="center" justify="space-around" class="mb-10" no-gutters>
+                    <v-col class="text-center" id="php-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="php" class="xxl cool-blue">mdi-language-php</v-icon>
                         <blockquote id="php-text" class="text--black overline font-weight-bold text-center title">duh</blockquote>
-                    </div>
-                    <div id="vue-holder">
+                    </v-col>
+                    <v-col class="text-center" id="vue-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="vue" class="xxl cool-blue">mdi-vuejs</v-icon>
                         <blockquote id="vue-text" class="text--black overline font-weight-bold text-center title">vue</blockquote>
-                    </div>
-                    <div id="react-holder">
+                    </v-col>
+                    <v-col class="text-center" id="react-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="react" class="xxl cool-blue">mdi-react</v-icon>
                         <blockquote id="react-text" class="text--black overline font-weight-bold text-center title">react</blockquote>
-                    </div>
-                </v-row>
-                <v-row align="center" justify="space-around" class="mb-10">
-                    <div id="laravel-holder">
+                    </v-col>
+                    <v-col class="text-center" id="laravel-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="laravel" class="xxl cool-blue">mdi-laravel</v-icon>
                         <blockquote id="laravel-text" class="text--black overline font-weight-bold text-center title">laravel</blockquote>
-                    </div>
-                    <div id="drupal-holder">
+                    </v-col>
+                </v-row>
+                <v-row data-aos="fade-up-right" data-aos-duration="1000" align="center" justify="space-around" class="mb-10" no-gutters>
+                    <v-col class="text-center" id="drupal-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="drupal" class="xxl cool-blue">mdi-drupal</v-icon>
                         <blockquote id="drupal-text" class="text--black overline font-weight-bold text-center title">drupal</blockquote>
-                    </div>
-                    <div id="js-holder">
+                    </v-col>
+                    <v-col class="text-center" id="js-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="js" class="xxl cool-blue">mdi-language-javascript</v-icon>
                         <blockquote id="js-text" class="text--black overline font-weight-bold text-center title">common js</blockquote>
-                    </div>
-                </v-row>
-                <v-row align="center" justify="space-around" class="mb-10">
-                    <div id="git-holder">
+                    </v-col>
+                    <v-col class="text-center" id="git-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="git" class="xxl cool-blue">mdi-git</v-icon>
                         <blockquote id="git-text" class="text--black overline font-weight-bold text-center title">git</blockquote>
-                    </div>
-                    <div id="cli-holder">
-                        <v-icon @mouseover="swapText" @mouseout="swapText" id="cli" class="xxl cool-blue text-center">mdi-console</v-icon>
+                    </v-col>
+                    <v-col class="text-center" id="cli-holder">
+                        <v-icon @mouseover="swapText" @mouseout="swapText" id="cli" class="xxl cool-blue">mdi-console</v-icon>
                         <blockquote id="cli-text" class="text--black overline font-weight-bold text-center title">cli</blockquote>
-                    </div>
-                    <div id="html-holder">
-                        <v-icon @mouseover="swapText" @mouseout="swapText" id="html" class="xxl cool-blue text-center">mdi-language-html5</v-icon>
-                        <blockquote id="html-text" class="text--black overline font-weight-bold text-center title">html</blockquote>
-                    </div>
+                    </v-col>
                 </v-row>
-                <v-row align="center" justify="space-around">
-                    <div id="sql-holder">
+                <v-row data-aos="fade-up-left" data-aos-duration="1000" align="center" justify="space-around" no-gutters>
+                    <v-col class="text-center" id="html-holder">
+                        <v-icon @mouseover="swapText" @mouseout="swapText" id="html" class="xxl cool-blue">mdi-language-html5</v-icon>
+                        <blockquote id="html-text" class="text--black overline font-weight-bold text-center title">html</blockquote>
+                    </v-col>
+                    <v-col class="text-center" id="sql-holder">
                         <v-icon @mouseover="swapText" @mouseout="swapText" id="sql" class="xxl cool-blue">mdi-database</v-icon>
                         <blockquote id="sql-text" class="text--black overline font-weight-bold text-center title">sql</blockquote>
-                    </div>
-                    <div id="wp-holder">
-                        <v-icon @mouseover="swapText" @mouseout="swapText" id="wp" class="xxl cool-blue text-center">fab fa-wordpress-simple</v-icon>
+                    </v-col>
+                    <v-col class="text-center" id="wp-holder">
+                        <v-icon @mouseover="swapText" @mouseout="swapText" id="wp" class="xxl cool-blue">mdi-wordpress</v-icon>
                         <blockquote id="wp-text" class="text--black overline font-weight-bold text-center title">wordpress</blockquote>
-                    </div>
-                    <div id="css-holder">
-                        <v-icon @mouseover="swapText" @mouseout="swapText" id="css" class="xxl cool-blue text-center">mdi-language-css3</v-icon>
+                    </v-col>
+                    <v-col class="text-center" id="css-holder">
+                        <v-icon @mouseover="swapText" @mouseout="swapText" id="css" class="xxl cool-blue">mdi-language-css3</v-icon>
                         <blockquote id="css-text" class="text--black overline font-weight-bold text-center title">css</blockquote>
-                    </div>
+                    </v-col>
                 </v-row>
             </v-container>
         </v-container>
