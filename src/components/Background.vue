@@ -9,7 +9,7 @@
             <v-window class="no-shadow" v-model="onboarding">
                 <v-window-item v-for="n in career" :key="`card-${n.key}`">
                     <v-row class="fill-height pt-0" tag="v-card-text">
-                        <v-container class="pt-0">
+                        <v-container>
                             <blockquote class="headline pt-0 blockquote pa-0">{{ n.title }}</blockquote>
                             <blockquote class="subheading mt-3 blockquote pa-0">{{ n.content }}</blockquote>
                             <blockquote v-if="n.content2" class="subheading mt-3 blockquote pa-0">{{ n.content2 }}</blockquote>
@@ -56,7 +56,7 @@
         mounted() {},
 
         data: () => ({
-            length: 3,
+            length: 4,
             onboarding: 0,
             career: [
                 {
@@ -88,7 +88,7 @@
                 },
                 {
                     key: 2,
-                    title: 'currently',
+                    title: 'to the farm',
                     content: 'at the end of march 2019, i joined a media company called farm journal. maintaining multiple drupal sites\n' +
                         'housing agricultural content, many of my daily tasks are making sure modules are updated properly,\n' +
                         'creating custom modules for editorial requests, third-party application integrations with the sites,\n' +
@@ -101,6 +101,17 @@
                         'as nova resources to send a single email/SMS to any customer who may have been missed in the JSON. the API\n' +
                         'documentation also provides thorough details of each endpoint, the necessary headers, how the\n' +
                         'JSON data needs to be formatted, and code examples for command line, php, and javascript.'
+                },
+                {
+                    key: 3,
+                    title: 'currently',
+                    content: 'after my time at farm journal, I moved onto a fast-paced, fintech startup called lendflow. utilizing\n' +
+                        'a laravel json rest api, the product has incorporated over 3 dozen external financial api integrations while\n' +
+                        'innovating the market with custom platform automation.',
+                    content2: 'the platform is also utilizing tools such as aws ses to send emails from the product, redis for cache, \n' +
+                        'ci/cd pipelines, phpunit for a full suite of unit and feature tests, and custom webhook definitions. while performing \n' +
+                        'my engineering duties at lendflow, i have also earned 4 technical product manager certifications from pragmatic\n' +
+                        'institute - i am now considered a certified product manager to go along with my engineering background.'
                 }
             ]
         }),

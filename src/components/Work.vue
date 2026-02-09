@@ -7,7 +7,7 @@
             <v-row justify="center" align="center">
                 <blockquote class="text-white mt-3 title text-center font-weight-light blockquote pa-0">
                     some these projects have slightly changed since i was a part of them, but if you have any questions regarding these
-                    front-facing examples, and how i was involved, be sure to drop me a line below!
+                    front-facing examples, and how i was involved, be sure to drop me a message below or checkout my <a class="link-color" target="_blank" href="https://github.com/kldavis24">github</a>!
                 </blockquote>
             </v-row>
         </v-container>
@@ -119,18 +119,6 @@
                         'express js'
                     ]
                 },
-                {
-                    title: 'harry helmet',
-                    image: require('../assets/harry-helmet-monitor.png'),
-                    url: 'https://harryhelmetvirginia.com',
-                    description: 'written in the roots/bedrock wordpress boilerplate, this small site is full of custom\n' +
-                        'fields available from the admin panel. examples of said custom fields include:\n' +
-                        'testimonials (text and rating), footer copy, carousel images, hero headers/subtest,\n' +
-                        'and the hero promo bar.',
-                    recipes: [
-                        'wordpress'
-                    ]
-                },
             ],
             numberOfColumns: 2,
         }),
@@ -164,6 +152,9 @@
     }
     .overlay-blue {
         background-color: rgba(57, 177, 255, 0.53) !important;
+    }
+    .link-color {
+        color: rgb(57, 176, 255) !important;
     }
     .v-card--reveal {
         align-items: center;

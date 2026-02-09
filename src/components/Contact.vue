@@ -130,7 +130,7 @@
                 }
 
                 if (!this.errors.length) {
-                    emailjs.sendForm('contact_service', 'contact_form', form)
+                    emailjs.sendForm('service_jxxvn6t', 'contact_form', form)
                     this.fillAlertArray('bg-green-500', 'thanks!', 'border-green-400 bg-black text-green-500', 'i\'ll be sure to reach out to you')
                 } else {
                     this.fillAlertArray('bg-red-500', 'whoops, you done goofed...', 'border-red-400 bg-black text-red-500', null)
