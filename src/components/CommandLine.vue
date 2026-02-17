@@ -2,10 +2,10 @@
     <div class="terminal-container">
         <div class="terminal">
             <p class="mb-0">
-                <span class="machine-name">devTeamLead@sick-ubuntu-machine</span>
+                <span class="machine-name">teamLead@sick-machine</span>
                 <span class="path"> ~ $ </span>
                 <vue-typer
-                    :text="['npm install dynamite-developer']"
+                    :text="['composer require dynamite-developer']"
                     :repeat="0"
                     initial-action="typing"
                     :type-delay="70"
@@ -13,17 +13,32 @@
                     caret-animation="blink"
                 ></vue-typer>
             </p>
-            <p v-if="packagesVisible" class="mb-0">
-                + kevin-davis@2.2.0
+            <p v-if="packagesVisible" class="mb-0 machine-name">
+                ./composer.json has been updated
             </p>
-            <p v-if="packagesVisible" class="mb-0">
-                added 1 packages from 3 contributors and audited 24391 packages in 6.125s
+            <p v-if="packagesVisible" class="mb-0 machine-name">
+                Running composer update dynamite-developer
             </p>
-            <p v-if="packagesVisible">
-                found <span class="machine-name">0</span> vulernabilities
+            <p v-if="packagesVisible" class="mb-0 machine-name">
+                Loading composer repositories with package information
+            </p>
+            <p v-if="packagesVisible" class="mb-0 machine-name">
+                Updating dependencies
+            </p>
+            <p v-if="packagesVisible" class="mb-0 machine-name">
+                Package operations: 1 installs, 0 updates, 0 removals
+            </p>
+            <p v-if="packagesVisible" class="mb-0 ml-4">
+                - Downloading <span class="machine-name">dynamite-developer/kevin-davis</span> (4.0)
+            </p>
+            <p v-if="packagesVisible" class="mb-0 ml-4">
+                - Installing <span class="machine-name">dynamite-developer/kevin-davis</span> (4.0)
+            </p>
+            <p v-if="packagesVisible" class="machine-name">
+                No security vulnerability advisories found.
             </p>
             <p v-if="commandEnd" class="mb-0">
-                Dynamite developer successfully found. Happy hacking!
+                Using version ^4.0 for dynamite-developer/kevin-davis
             </p>
         </div>
     </div>
